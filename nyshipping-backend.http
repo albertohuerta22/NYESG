@@ -1,0 +1,6 @@
+@nyshipping_backend_HostAddress = http://localhost:5020
+
+GET {{nyshipping_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
