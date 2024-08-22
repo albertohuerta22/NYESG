@@ -1,0 +1,55 @@
+<div class="water-chart">
+  <div class="chart-container">
+    <div class="chart-title">{{ chartTitle }}</div>
+
+    <!-- Period Selection Dropdown -->
+    <div class="period-selection">
+      <label for="period-select">Select Period:</label>
+      <select
+        id="period-select"
+        [(ngModel)]="selectedPeriod"
+        (change)="onPeriodChange()"
+      >
+        <option *ngFor="let period of periods" [value]="period">
+          {{ period }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Display CO2 Score -->
+    <div *ngIf="co2Score !== null" class="co2-score">
+      CO2 Emissions Score: {{ co2Score | number : "1.0-2" }} kg CO2
+    </div>
+
+    <div class="chart-buttons">
+      <button (click)="changeChartType('bar')">Bar Chart</button>
+      <button (click)="changeChartType('line')">Line Chart</button>
+      <label>
+        <input
+          type="checkbox"
+          [(ngModel)]="showNationalAverage"
+          (change)="toggleNationalAverage()"
+          checked
+        />
+        Show National Average
+      </label>
+    </div>
+
+    <!-- Mixed Chart (Bar and Line) -->
+    <canvas
+      baseChart
+      [datasets]="mixedChartData.datasets"
+      [labels]="chartLabels"
+      [options]="chartOptions"
+      [type]="chartType"
+    ></canvas>
+  </div>
+
+  <app-calculator
+    [usageType]="'water'"
+    [showElectricity]="false"
+    [showWater]="true"
+    [showWaste]="false"
+  >
+  </app-calculator>
+</div>

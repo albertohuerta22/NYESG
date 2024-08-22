@@ -1,0 +1,23 @@
+.navbar {
+  background-color: #cfe9cc; /* Lighter green shade */
+  padding: 10px 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px; /* Adjust the spacing between links */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #2c3e50; /* Darker color for better contrast */
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #b8d3a9; /* Slightly darker green on hover */
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,46 @@
+// src/app/themes/_themes.scss
+
+// Light Theme Variables
+$light-theme-background: #f0fdf4;
+$light-theme-text: #1a202c;
+$light-theme-primary: #48bb78;
+$light-theme-navbar-background: #cfe9cc;
+// Dark Theme Variables
+$dark-theme-background: #1a202c;
+$dark-theme-text: #f0fdf4;
+$dark-theme-primary: #48bb78;
+
+$light-theme-text: #2c3e50;
+
+body.light-mode {
+  background-color: $light-theme-background;
+  color: $light-theme-text;
+}
+
+body.dark-mode {
+  background-color: $dark-theme-background;
+  color: $dark-theme-text;
+}
+
+.navbar {
+  background-color: $light-theme-primary;
+  padding: 10px;
+
+  a {
+    color: $light-theme-text;
+    text-decoration: none;
+    margin-right: 15px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+body.dark-mode .navbar {
+  background-color: $dark-theme-primary;
+
+  a {
+    color: $dark-theme-background;
+  }
+}

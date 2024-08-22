@@ -1,0 +1,44 @@
+<div class="energy-chart">
+  <div class="chart-container">
+    <div class="chart-title">{{ chartTitle }}</div>
+
+    <div class="control-container">
+      <button (click)="changeChartType('bar')">Bar Chart</button>
+      <button (click)="changeChartType('line')">Line Chart</button>
+      <label for="periodSelect">Select Period:</label>
+      <select
+        id="periodSelect"
+        [(ngModel)]="selectedPeriod"
+        (change)="onPeriodChange()"
+      >
+        <option *ngFor="let period of periods" [value]="period">
+          {{ period }}
+        </option>
+      </select>
+      <label>
+        <input
+          type="checkbox"
+          [(ngModel)]="showNationalAverage"
+          (ngModelChange)="toggleNationalAverage($event)"
+        />
+        Show National Average
+      </label>
+    </div>
+
+    <canvas
+      baseChart
+      [datasets]="mixedChartData.datasets"
+      [labels]="chartLabels"
+      [options]="chartOptions"
+      [type]="chartType"
+    ></canvas>
+  </div>
+
+  <app-calculator
+    [usageType]="'electricity'"
+    [showElectricity]="true"
+    [showWater]="false"
+    [showWaste]="false"
+  >
+  </app-calculator>
+</div>

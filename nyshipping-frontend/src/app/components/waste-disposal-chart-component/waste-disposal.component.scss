@@ -1,0 +1,46 @@
+@import "../../themes/themes.scss";
+@import "../../themes/mixins.scss";
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 900px; /* Set a consistent maximum width */
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+
+  @include flex-center;
+}
+
+.chart-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  // @include theme-colors($light-theme-primary, $light-theme-text);
+}
+
+.chart-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Consistent gap between controls */
+  margin-bottom: 20px;
+}
+
+.chart-canvas {
+  width: 100%;
+  height: auto;
+}
+
+.co2-score {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}

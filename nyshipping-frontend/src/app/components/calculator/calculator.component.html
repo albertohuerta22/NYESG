@@ -1,0 +1,23 @@
+<div class="calculator-container">
+  <h3>CO2 Emissions Calculator</h3>
+  <div *ngIf="showElectricity">
+    <label>{{ label1 }}:</label>
+    <input type="number" [(ngModel)]="electricityUsage" />
+  </div>
+  <div *ngIf="showElectricity">
+    <label>{{ label2 }}:</label>
+    <input type="number" [(ngModel)]="gasUsage" />
+  </div>
+  <div *ngIf="showWater">
+    <label>Water Usage (gallons):</label>
+    <input type="number" [(ngModel)]="waterUsage" />
+  </div>
+  <div *ngIf="showWaste">
+    <label>Waste Disposal (tons):</label>
+    <input type="number" [(ngModel)]="wasteDisposal" />
+  </div>
+  <button (click)="calculateCO2()">Calculate CO2 Emissions</button>
+  <div *ngIf="calculatedCO2 !== null">
+    Total CO2 Emissions: {{ calculatedCO2 }} kg CO2
+  </div>
+</div>

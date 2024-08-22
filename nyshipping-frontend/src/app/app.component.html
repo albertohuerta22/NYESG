@@ -1,0 +1,9 @@
+<app-navbar (showModal)="showReportModal()"></app-navbar>
+<div class="main-content">
+  <router-outlet></router-outlet>
+  <app-modal
+    *ngIf="isReportModalVisible"
+    (generateReport)="handleGenerateReport($event)"
+    (closeModalEvent)="closeReportModal()"
+  ></app-modal>
+</div>

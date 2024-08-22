@@ -1,0 +1,56 @@
+<div class="waste-chart">
+  <div class="chart-container">
+    <div class="chart-title">
+      {{ chartTitle }}
+    </div>
+
+    <!-- CO2 Emissions Score Display -->
+    <div class="co2-score">
+      <span *ngIf="co2Score !== null"
+        >CO2 Emissions: {{ co2Score }} kg CO2</span
+      >
+    </div>
+
+    <div class="control-container">
+      <button (click)="changeChartType('bar')">Bar Chart</button>
+      <button (click)="changeChartType('line')">Line Chart</button>
+      <label for="periodSelect">Select Period:</label>
+      <select
+        id="periodSelect"
+        [(ngModel)]="selectedPeriod"
+        (change)="onPeriodChange()"
+      >
+        <option *ngFor="let period of periods" [value]="period">
+          {{ period }}
+        </option>
+      </select>
+      <label>
+        <input
+          type="checkbox"
+          [(ngModel)]="showNationalAverage"
+          (change)="toggleNationalAverage()"
+          checked
+        />
+        Show National Average
+      </label>
+    </div>
+
+    <!-- Bar Chart -->
+    <canvas
+      baseChart
+      [datasets]="mixedChartData"
+      [labels]="chartLabels"
+      [options]="chartOptions"
+      [type]="chartType"
+    ></canvas>
+  </div>
+
+  <!-- Calculator Component for Waste Disposal -->
+  <app-calculator
+    [usageType]="'waste'"
+    [showElectricity]="false"
+    [showWater]="false"
+    [showWaste]="true"
+  >
+  </app-calculator>
+</div>

@@ -1,0 +1,31 @@
+<div class="modal">
+  <div class="modal-content">
+    <h2>Generate Report</h2>
+    <label>
+      <input
+        type="checkbox"
+        [(ngModel)]="includeEnergy"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      Include Energy Usage
+    </label>
+    <label>
+      <input
+        type="checkbox"
+        [(ngModel)]="includeWater"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      Include Water Usage
+    </label>
+    <label>
+      <input
+        type="checkbox"
+        [(ngModel)]="includeWaste"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      Include Waste Disposal
+    </label>
+    <button (click)="onGenerate()">Generate Report</button>
+    <button (click)="closeModal()">Close</button>
+  </div>
+</div>

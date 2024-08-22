@@ -1,0 +1,44 @@
+// src/styles.scss
+
+@import "./app/themes/themes.scss"; // Import your theme SCSS
+@import "./app/themes/mixins.scss"; // Import mixins (if used)
+
+body {
+  background-color: $light-theme-background;
+  color: $light-theme-text;
+
+  &.dark-theme {
+    background-color: $dark-theme-background;
+    color: $dark-theme-text;
+  }
+}
+
+.main-content {
+  padding: 20px;
+  margin-top: 60px; /* Adjust based on the height of your navbar */
+}
+
+.navbar {
+  background-color: $light-theme-navbar-background;
+  color: $light-theme-text;
+  padding: 10px 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: $light-theme-text;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken($light-theme-navbar-background, 10%);
+    border-radius: 5px;
+  }
+}
