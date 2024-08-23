@@ -13,7 +13,7 @@ export class NavbarComponent {
   @Output() showModal = new EventEmitter<void>();
 
   openReportModal(event: Event): void {
-    event.preventDefault(); // Prevent the default action of the link
+    event.preventDefault();
     this.showModal.emit();
   }
 }

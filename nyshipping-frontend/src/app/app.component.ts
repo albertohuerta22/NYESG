@@ -39,7 +39,6 @@ import { WasteDisposalComponent } from './components/waste-disposal-chart-compon
     NavbarComponent,
     ModalComponent,
     CommonModule,
-    // Ensure these are the correct paths and names for your components
     EnergyUsageChartComponent,
     WaterUsageComponent,
     WasteDisposalComponent,
@@ -75,7 +74,6 @@ export class AppComponent {
 
     this.renderingForPdf = true;
 
-    // Delay to allow Angular to render the charts before generating the PDF
     setTimeout(() => {
       this.generatePdfReport();
       this.renderingForPdf = false;

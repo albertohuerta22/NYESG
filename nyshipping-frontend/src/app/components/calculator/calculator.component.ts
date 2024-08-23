@@ -11,10 +11,10 @@ import { CommonModule } from '@angular/common';
   imports: [FormsModule, CommonModule],
 })
 export class CalculatorComponent implements OnInit {
-  @Input() usageType: string = 'electricity'; // Default usage type
-  @Input() showElectricity: boolean = true; // Control visibility of electricity fields
-  @Input() showWater: boolean = false; // Control visibility of water fields
-  @Input() showWaste: boolean = false; // Control visibility of waste fields
+  @Input() usageType: string = 'electricity';
+  @Input() showElectricity: boolean = true;
+  @Input() showWater: boolean = false;
+  @Input() showWaste: boolean = false;
 
   public electricityUsage: number = 0;
   public gasUsage: number = 0;
@@ -37,10 +37,10 @@ export class CalculatorComponent implements OnInit {
       this.label2 = 'Gas Usage (cubic meters)';
     } else if (this.usageType === 'water') {
       this.label1 = 'Water Usage (gallons)';
-      this.label2 = ''; // No second input needed for water usage
+      this.label2 = '';
     } else if (this.usageType === 'waste') {
       this.label1 = 'Waste Disposal (tons)';
-      this.label2 = ''; // No second input needed for waste disposal
+      this.label2 = '';
     }
   }
 

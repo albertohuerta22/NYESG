@@ -8,5 +8,4 @@ export const routes: Routes = [
   { path: 'energy', component: EnergyUsageChartComponent },
   { path: 'water-usage', component: WaterUsageComponent },
   { path: 'waste-disposal', component: WasteDisposalComponent },
-  // Add more routes as needede
 ];

@@ -1,7 +1,5 @@
-// src/styles.scss
-
-@import "./app/themes/themes.scss"; // Import your theme SCSS
-@import "./app/themes/mixins.scss"; // Import mixins (if used)
+@import "./app/themes/themes.scss";
+@import "./app/themes/mixins.scss";
 
 body {
   background-color: $light-theme-background;
@@ -15,7 +13,7 @@ body {
 
 .main-content {
   padding: 20px;
-  margin-top: 60px; /* Adjust based on the height of your navbar */
+  margin-top: 60px;
 }
 
 .navbar {

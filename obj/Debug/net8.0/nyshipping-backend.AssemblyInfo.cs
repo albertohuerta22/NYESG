@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("nyshipping-backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+991ae736fb824f610c86feaf4b7bef2051195a65")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d897446031b4cd90b4a37f28fb5e986a8a3b8029")]
 [assembly: System.Reflection.AssemblyProductAttribute("nyshipping-backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("nyshipping-backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

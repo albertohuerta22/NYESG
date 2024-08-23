@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class EnergyUsageService {
-  private apiUrl = 'http://localhost:5020/api/energy'; // Replace with your actual backend API endpoint
+  private apiUrl = 'http://localhost:5020/api/energy';
 
   constructor(private http: HttpClient) {}
 

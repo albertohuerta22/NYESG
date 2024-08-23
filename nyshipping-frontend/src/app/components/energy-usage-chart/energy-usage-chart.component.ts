@@ -46,16 +46,16 @@ export class EnergyUsageChartComponent implements OnInit {
 
   public periods: string[] = ['Monthly', 'Quarterly', 'Yearly'];
   public selectedPeriod: string = 'Monthly';
-  public showNationalAverage: boolean = true; // Toggle for National Average
+  public showNationalAverage: boolean = true;
 
-  public co2EmissionScore: number | null = null; // Property to store CO2 emission score
+  public co2EmissionScore: number | null = null;
 
   constructor(
     private http: HttpClient,
     @Inject(PLATFORM_ID) private platformId: Object,
-    private calculationService: CalculationService // Inject CalculationService
+    private calculationService: CalculationService
   ) {
-    // Register all Chart.js components
+    //need this for it to work
     Chart.register(...registerables);
   }
 
@@ -120,7 +120,7 @@ export class EnergyUsageChartComponent implements OnInit {
                 borderColor: 'rgba(255, 99, 132, 1)',
                 type: 'bar',
               },
-              ...(this.showNationalAverage ? [nationalAverageData] : []), // Conditional inclusion of the national average
+              ...(this.showNationalAverage ? [nationalAverageData] : []),
             ],
           };
         } else if (this.chartType === 'line') {
@@ -172,7 +172,7 @@ export class EnergyUsageChartComponent implements OnInit {
 
     switch (period) {
       case 'Monthly':
-        return filteredData; // Return the unique monthly data
+        return filteredData;
       case 'Quarterly':
         return filteredData.filter((item, index) => index % 3 === 0);
       case 'Yearly':
@@ -193,7 +193,7 @@ export class EnergyUsageChartComponent implements OnInit {
   }
 
   getNationalAverageData(length: number, period: string): number[] {
-    const nationalAverageValue = 1150; // Example national average value
+    const nationalAverageValue = 1150;
 
     if (period === 'Yearly') {
       return Array(length).fill(nationalAverageValue);
@@ -208,16 +208,16 @@ export class EnergyUsageChartComponent implements OnInit {
 
   changeChartType(type: ChartType): void {
     this.chartType = type;
-    this.loadData(); // Reload data on chart type change
+    this.loadData();
   }
 
   onPeriodChange(): void {
-    this.loadData(); // Reload data when period changes
+    this.loadData();
   }
 
   toggleNationalAverage(value: boolean): void {
     this.showNationalAverage = value;
-    this.loadData(); // Reload data when the toggle changes
+    this.loadData();
   }
 
   calculateCO2Score(
@@ -252,7 +252,6 @@ export class EnergyUsageChartComponent implements OnInit {
       '#F23',
     ];
 
-    // If there are more data points than colors, repeat the colors
     return Array.from({ length }, (_, i) => colors[i % colors.length]);
   }
 }

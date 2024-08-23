@@ -146,3 +146,4 @@
 /Users/albertohuerta/Projects/nyshipping-backend/bin/Debug/net8.0/nyshipping-frontend/tsconfig.app.json
 /Users/albertohuerta/Projects/nyshipping-backend/bin/Debug/net8.0/nyshipping-frontend/tsconfig.json
 /Users/albertohuerta/Projects/nyshipping-backend/bin/Debug/net8.0/nyshipping-frontend/tsconfig.spec.json
+/Users/albertohuerta/Projects/nyshipping-backend/obj/Debug/net8.0/nyshipping-backend.sourcelink.json
